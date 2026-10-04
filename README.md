@@ -48,6 +48,44 @@ python3 example.py
 | `likes` | integer | Like count. |
 …and 8 more fields — full schema on the [live page](https://quanticdata.io/collectors/tiktok-video-scraper-api/).
 
+## Node.js
+
+Node 18 or newer, no dependencies. See [`example.mjs`](example.mjs):
+
+```bash
+export QD_API_KEY=qd_live_...
+node example.mjs https://www.tiktok.com/@nasa/video/7668779420412284191
+```
+
+## Sample response
+
+A real run from 4 October 2026 on one public video from a verified organisation account. The rows arrive in `payload.results`; one is shown here and the full capture is in [`sample-response.json`](sample-response.json).
+
+```json
+{
+  "rank": 1,
+  "url": "https://www.tiktok.com/@nasa/video/7668779420412284191",
+  "video_id": "7668779420412284191",
+  "author": "nasa",
+  "author_name": "NASA",
+  "author_id": "7664638705177150477",
+  "author_verified": true,
+  "author_followers": 2000000,
+  "description": "Across the world, in the skies, and beyond, here's the latest in your NASA Minute: Farnborough Air Show, Oshkosh, Chris Williams returns home, Roman nears launch, AI-focused Genesis mission, Artemis III engines arrive. As always, stay tuned for more next week!",
+  "hashtags": [],
+  "views": 618100,
+  "likes": 22500,
+  "comments": 585,
+  "shares": 432,
+  "saves": 2031,
+  "duration_seconds": 140,
+  "music": "original sound",
+  "music_author": "NASA",
+  "created_at": "2026-07-31T19:41:05.000Z",
+  "cover": "https://p19-common-sign.tiktokcdn-us.com/..."
+}
+```
+
 ## Pricing
 
 **$0.004 per delivered video** ($4 per 1,000). A run that delivers nothing costs nothing, and failed rows are never billed. The $2/month free allowance covers roughly 500 videos — no card required.
